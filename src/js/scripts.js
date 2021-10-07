@@ -1,2 +1,2 @@
 // Theme code.
-import './stanford_starter.behaviors.js';
+import './bondholders_subtheme.behaviors.js';
