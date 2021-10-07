@@ -43,18 +43,13 @@ const distAssets =  path.resolve(distDir, 'assets');
 // Start configuring webpack.
 var webpackConfig = {
   // What am i?
-  name: 'stanford_starter',
+  name: 'bondholders_subtheme',
   // Allows for map files.
   devtool: 'source-map',
   // What build?
   entry: {
-    "base":          path.resolve(srcSass, "base/index.scss"),
+    "bondholders":  path.resolve(srcSass, "config/index.scss"),
     "scripts":       path.resolve(srcJS,   "scripts.js"),
-    "components":    path.resolve(srcSass, "components/index.scss"),
-    "layout":        path.resolve(srcSass, "layout/index.scss"),
-    "print":         path.resolve(srcSass, "print/index.scss"),
-    "state":         path.resolve(srcSass, "state/index.scss"),
-    "theme":         path.resolve(srcSass, "theme/index.scss"),
   },
   // Where put build?
   output: {
@@ -141,8 +136,8 @@ var webpackConfig = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              publicPath: "../assets/img",
-              outputPath: "../assets/img"
+              publicPath: "../assets/png",
+              outputPath: "../assets/png"
             }
           }
         ]

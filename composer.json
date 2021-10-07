@@ -1,8 +1,8 @@
 {
-  "name": "su-sws/stanford_starter",
-  "description": "Stanford Starter Sub Theme.",
+  "name": "su-sws/bondholders_subtheme",
+  "description": "Bondholders Sub Theme",
   "type": "drupal-custom-theme",
-  "homepage": "https://github.com/SU-SWS/stanford_starter",
+  "homepage": "https://github.com/SU-SWS/bondholders_subtheme",
   "authors": [],
   "license": "GPL-2.0+",
   "minimum-stability": "dev"
