@@ -14,14 +14,14 @@ export default {
     // console.log("Attached.");
     (function ($) {
     
-    // cookie policy
-      if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_cookies='))) {
-        $('.cookie-overlay').removeClass('ac-block').addClass('ac-none');
+    // disclaimer cookie policy
+      if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
+        $('.cookie-overlay').removeClass('ad-block').addClass('ad-none');
       }
     
       $('.accept-cookies').on('click', function() {
-        document.cookie = "accepted_cookies=yes;"
-        $('.cookie-overlay').removeClass('ac-block').addClass('ac-none');
+        document.cookie = "accepted_disclaimer=yes;"
+        $('.cookie-overlay').removeClass('ad-block').addClass('ad-none');
       })
 
     
