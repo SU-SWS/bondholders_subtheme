@@ -15,15 +15,13 @@ export default {
     (function ($) {
     
     // cookie policy
-
-    
-      if (document.cookie.indexOf("accepted_cookies=") > 0) {
-        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+      if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_cookies='))) {
+        $('.cookie-overlay').removeClass('ac-block').addClass('ac-none');
       }
     
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_cookies=yes;"
-        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+        $('.cookie-overlay').removeClass('ac-block').addClass('ac-none');
       })
 
     

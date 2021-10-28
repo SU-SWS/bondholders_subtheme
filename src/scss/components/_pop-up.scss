@@ -9,12 +9,13 @@
   top: 60px;
   background: $su-color-white;
   z-index: 2051;
+  min-height: fit-content;
 
   > div:first-child {
     width: 100%;
   }
 
-  &.d-none {
+  &.ac-none {
     display: none;
   }
 
@@ -23,6 +24,7 @@
     left: 0;
     right: 0;
     border-radius: 0;
+    background: $su-color-white;
 
     > div:first-child {
       width: auto;
