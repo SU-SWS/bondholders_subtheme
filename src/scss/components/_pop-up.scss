@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+// Disclaimer popup
+.cookie-overlay {
+  @include margin(0);
+  @include padding(100px);
+
+  position: absolute;
+  top: 60px;
+  background: $su-color-white;
+  z-index: 2051;
+
+  > div:first-child {
+    width: 100%;
+  }
+
+  &.d-none {
+    display: none;
+  }
+
+  @include grid-media-max(md) {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+
+    > div:first-child {
+      width: auto;
+    }
+  }
+}

@@ -12,6 +12,22 @@ export default {
   // Attach Drupal Behavior.
   attach (context, settings) {
     // console.log("Attached.");
+    (function ($) {
+    
+    // cookie policy
+
+    
+      if (document.cookie.indexOf("accepted_cookies=") > 0) {
+        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+      }
+    
+      $('.accept-cookies').on('click', function() {
+        document.cookie = "accepted_cookies=yes;"
+        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+      })
+
+    
+  })(jQuery);
   },
 
   // Detach Example.
