@@ -6,7 +6,7 @@
   @include padding(100px);
 
   position: absolute;
-  top: 60px;
+  top: 110px;
   background: $su-color-white;
   z-index: 2051;
   min-height: fit-content;
@@ -29,5 +29,11 @@
     > div:first-child {
       width: auto;
     }
+  }
+}
+
+.role--authenticated {
+  .cookie-overlay { 
+    top: 190px;
   }
 }

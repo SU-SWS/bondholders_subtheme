@@ -20,7 +20,7 @@ export default {
       }
     
       $('.accept-cookies').on('click', function() {
-        document.cookie = "accepted_disclaimer=yes;"
+        document.cookie = "accepted_disclaimer=yes; Max-Age=86400;"
         $('.cookie-overlay').removeClass('ad-block').addClass('ad-none');
       })
 
