@@ -45,14 +45,18 @@ export default {
     '</div>'
 
     $(overlayHtml).appendTo("#page-content");
+    $('.block-bondholders-subtheme-content, footer').addClass('d-background');
+
 
       if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
-        $('.cookie-overlay').removeClass('ad-block').addClass('ad-none');
+        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+        $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
       }
     
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_disclaimer=yes; Max-Age=86400;"
-        $('.cookie-overlay').removeClass('ad-block').addClass('ad-none');
+        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+        $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
       })
 
     
