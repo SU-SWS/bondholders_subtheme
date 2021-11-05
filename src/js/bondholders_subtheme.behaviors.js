@@ -17,12 +17,12 @@ export default {
     // disclaimer cookie policy
     var overlayHtml = 
 
-    '<div class="cookie-overlay p-4 d-block">' +
-    '<div class="d-flex">' +
+    '<div class="cookie-overlay p-4 d-block" role="dialog"  aria-labelledby="d-title" aria-describedby="description">' +
+    '<div class="d-flex" id="description">' +
     
     '<p>Please read the Disclaimer below and indicate your acceptance before entering the <strong>Office of the Treasurer</strong> website with information for bondholders and the Stanford community.</p>' +
     
-    '<h2><strong>Disclaimer</strong></h2>' +
+    '<h2 id="d-title"><strong>Disclaimer</strong></h2>' +
     
     '<p>You have requested to enter the Bondholder Information section of the Stanford University website ("Section"). The purpose of this Section is to provide bondholders, noteholders, potential investors and others with general information about Stanford University and its various bond programs. All data provided in this Section and elsewhere in the University\'s website are for informational purposes only, are not intended for trading purposes and do not purport to include every item which may be of interest with respect to any of Stanford University\'s bonds and/or notes. </p>' +
     
@@ -40,26 +40,34 @@ export default {
     
     '<p>If you have read, understand and agree with the above and wish to continue to Stanford University\'s Bondholder Information website, please click <strong>ACCEPT</strong> below.</p>' +
     
+    '<button id="accept" class="su-button mt-3 accept-cookies" aria-label="Accept Disclaimer">Accept</button>' +
     '</div>' +
-    '<button class="su-button mt-3 accept-cookies">Accept</button>' +
     '</div>'
 
     $(overlayHtml).appendTo("#page-content");
     $('.block-bondholders-subtheme-content, footer').addClass('d-background');
 
-
       if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
         $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
       }
-    
+
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_disclaimer=yes; Max-Age=86400;"
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
         $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
-      })
 
-    
+        dialog.setAttribute('data-open', '');
+        $('#accept').focus();
+
+        $('#accept').addEventListener('keydown', function(e) {
+          if (e.keyCode == 9) {
+            e.preventDefault();
+          }
+        });
+
+        $("body").focus();
+      })
   })(jQuery);
   },
 
