@@ -10,12 +10,13 @@
   background: $su-color-white;
   z-index: 2051;
   min-height: fit-content;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
 
   > div:first-child {
     width: 100%;
   }
 
-  &.ad-none {
+  &.d-none {
     display: none;
   }
 
@@ -30,10 +31,33 @@
       width: auto;
     }
   }
+
+  button {
+    &:focus, 
+    &:hover  {
+      outline: 3px solid $su-color-black-20;
+    }
+  }
+}
+
+[role="dialog"][data-open] {
+  display: block;
+}
+
+.d-background {
+  opacity: 0.1;
+  background-color: $su-color-black-10;
+
+  a {
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 .role--authenticated {
-  .cookie-overlay { 
+  .cookie-overlay {
     top: 190px;
   }
 }
+
+
