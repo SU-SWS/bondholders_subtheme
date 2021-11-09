@@ -19,8 +19,8 @@ export default {
 
     '<div class="cookie-overlay p-4 d-block" role="dialog"  aria-labelledby="d-title" aria-describedby="description">' +
     '<div class="d-flex" id="description">' +
-    
-    '<p>Please read the Disclaimer below and indicate your acceptance before entering the <strong>Office of the Treasurer</strong> website with information for bondholders and the Stanford community.</p>' +
+
+    '<p id="dislaimer-intro">Please read the Disclaimer below and indicate your acceptance before entering the <strong>Office of the Treasurer</strong> website with information for bondholders and the Stanford community.</p>' +
     
     '<h2 id="d-title"><strong>Disclaimer</strong></h2>' +
     
@@ -36,7 +36,7 @@ export default {
     
     '<p>You acknowledge and agree that Stanford is not responsible for the availability of such sites or this Section, and does not endorse and is not responsible or liable for any content, advertising, products, services, forward-looking statements (as defined above) or other materials on or available from external sites or resources, including without limitation information in the nature of third party financial research, analytical tools or execution services. You further acknowledge and agree that Stanford is not responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, available on or through any such site or resource.</p>' +
     
-    '<p>All users of the Bondholder Information portion of Stanford\'s website remain subject to the general <a href="http://web.stanford.edu/site/terms.html" title="Terms of Use" target="_blank">Terms of Use</a> of Stanford\'s website.</p>' +
+    '<p>All users of the Bondholder Information portion of Stanford\'s website remain subject to the general <a href="http://web.stanford.edu/site/terms.html" title="Terms of Use" target="_blank" class="terms-of-use">Terms of Use</a> of Stanford\'s website.</p>' +
     
     '<p>If you have read, understand and agree with the above and wish to continue to Stanford University\'s Bondholder Information website, please click <strong>ACCEPT</strong> below.</p>' +
     
@@ -44,30 +44,63 @@ export default {
     '</div>' +
     '</div>'
 
-    $(overlayHtml).appendTo("#page-content");
+    $(overlayHtml).appendTo('#page-content')
+      .attr( 'tabindex', '-1');
+
+      var capture = $('#description');
+
+      $('.cookie-overlay')
+      .addClass('noisy')
+      .focus()
+      .keydown(
+        function handleKeydown( event ) {
+          if ( event.key.toLowerCase() !== 'tab' ) {
+            return;
+          }
+
+          var tabbable = $()
+            // All form elements can receive focus.
+            .add( capture.find( "button" ) )
+						// Any element that has an HREF can receive focus.
+						.add( capture.find( "[href]" ) );
+
+            var target = $( event.target );
+
+          // Reverse tabbing (Key: Shift+Tab).
+          if ( event.shiftKey ) {
+            if ( target.is(capture) || target.is(tabbable.first())) {
+
+              // Force focus to last element in container.
+              event.preventDefault();
+              tabbable.last().focus();
+            }
+
+          // Forward tabbing (Key: Tab).
+          } else {
+            if ( target.is( tabbable.last() ) ) {
+              // Force focus to first element in container.
+              event.preventDefault();
+              tabbable.first().focus();
+            }
+          }
+        });
+
     $('.block-bondholders-subtheme-content, footer').addClass('d-background');
 
+    // If the cookie is already accepted.
       if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
         $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
       }
 
+    // Set the cookie
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_disclaimer=yes; Max-Age=86400;"
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
         $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
+      });
 
-        dialog.setAttribute('data-open', '');
-        $('#accept').focus();
 
-        $('#accept').addEventListener('keydown', function(e) {
-          if (e.keyCode == 9) {
-            e.preventDefault();
-          }
-        });
-
-        $("body").focus();
-      })
   })(jQuery);
   },
 
