@@ -36,7 +36,7 @@ export default {
     
     '<p>You acknowledge and agree that Stanford is not responsible for the availability of such sites or this Section, and does not endorse and is not responsible or liable for any content, advertising, products, services, forward-looking statements (as defined above) or other materials on or available from external sites or resources, including without limitation information in the nature of third party financial research, analytical tools or execution services. You further acknowledge and agree that Stanford is not responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, available on or through any such site or resource.</p>' +
     
-    '<p>All users of the Bondholder Information portion of Stanford\'s website remain subject to the general <a href="http://web.stanford.edu/site/terms.html" title="Terms of Use" target="_blank" class="terms-of-use">Terms of Use</a> of Stanford\'s website.</p>' +
+    '<p>All users of the Bondholder Information portion of Stanford\'s website remain subject to the general <a href="https://www.stanford.edu/site/terms/" title="Terms of Use" target="_blank" class="terms-of-use">Terms of Use</a> of Stanford\'s website.</p>' +
     
     '<p>If you have read, understand and agree with the above and wish to continue to Stanford University\'s Bondholder Information website, please click <strong>ACCEPT</strong> below.</p>' +
     
