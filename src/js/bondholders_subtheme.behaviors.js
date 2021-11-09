@@ -44,13 +44,12 @@ export default {
     '</div>' +
     '</div>'
 
-    $(overlayHtml).appendTo('#page-content')
+    $(overlayHtml).insertBefore('#page-content')
       .attr( 'tabindex', '-1');
 
       var capture = $('#description');
 
       $('.cookie-overlay')
-      .addClass('noisy')
       .focus()
       .keydown(
         function handleKeydown( event ) {
@@ -85,19 +84,19 @@ export default {
           }
         });
 
-    $('.block-bondholders-subtheme-content, footer').addClass('d-background');
+    $('.page-content, footer').addClass('d-background').attr('aria-hidden','true');
 
     // If the cookie is already accepted.
       if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
-        $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
+        $('.page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       }
 
     // Set the cookie
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_disclaimer=yes; Max-Age=86400;"
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
-        $('.block-bondholders-subtheme-content, footer').removeClass('d-background');
+        $('.page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       });
 
 
