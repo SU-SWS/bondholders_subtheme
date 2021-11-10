@@ -94,7 +94,7 @@ export default {
 
     // Set the cookie
       $('.accept-cookies').on('click', function() {
-        document.cookie = "accepted_disclaimer=yes; Max-Age=86400;"
+        document.cookie = "accepted_disclaimer=yes; Max-Age=86400; path=/; secure;"
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
         $('.page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       });
