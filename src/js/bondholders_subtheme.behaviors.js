@@ -84,19 +84,19 @@ export default {
           }
         });
 
-    $('.page-content, footer').addClass('d-background').attr('aria-hidden','true');
+    $('.su-multi-menu, .page-content, footer').addClass('d-background').attr('aria-hidden','true');
 
     // If the cookie is already accepted.
       if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
-        $('.page-content, footer').removeClass('d-background').attr('aria-hidden','false');
+        $('.su-multi-menu, .page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       }
 
     // Set the cookie
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_disclaimer=yes; Max-Age=86400; path=/; secure;"
         $('.cookie-overlay').removeClass('d-block').addClass('d-none');
-        $('.page-content, footer').removeClass('d-background').attr('aria-hidden','false');
+        $('.su-multi-menu, .page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       });
 
 

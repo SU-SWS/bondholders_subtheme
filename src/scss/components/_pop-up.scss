@@ -21,6 +21,7 @@
   }
 
   @include grid-media-max(md) {
+    @include padding(50px);
     bottom: 0;
     left: 0;
     right: 0;
@@ -40,15 +41,12 @@
   }
 }
 
-[role="dialog"][data-open] {
-  display: block;
-}
-
 .d-background {
   opacity: 0.1;
   background-color: $su-color-black-10;
 
-  a {
+  a, 
+  button {
     pointer-events: none;
     cursor: default;
   }
