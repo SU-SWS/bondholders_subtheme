@@ -17,7 +17,7 @@ export default {
     // disclaimer cookie policy
     var overlayHtml = 
 
-    '<div class="cookie-overlay p-4 d-block" role="dialog"  aria-labelledby="d-title" aria-describedby="description">' +
+    '<div class="cookie-overlay p-4 d-block" role="dialog" style="visibility:hidden;" aria-labelledby="d-title" aria-describedby="description">' +
     '<div class="d-flex" id="description">' +
 
     '<p id="dislaimer-intro">Please read the Disclaimer below and indicate your acceptance before entering the <strong>Office of the Treasurer</strong> website with information for bondholders and the Stanford community.</p>' +
@@ -86,16 +86,18 @@ export default {
 
     $('.su-multi-menu, .page-content, footer').addClass('d-background').attr('aria-hidden','true');
 
+    $('.cookie-overlay').css('visibility', '');
+
     // If the cookie is already accepted.
-      if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer='))) {
-        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+      if (document.cookie.split(';').some((item) => item.trim().startsWith('accepted_disclaimer=yes'))) {
+        $('.cookie-overlay').removeClass('d-block').addClass('d-none').css('visibility', 'hidden');
         $('.su-multi-menu, .page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       }
 
     // Set the cookie
       $('.accept-cookies').on('click', function() {
         document.cookie = "accepted_disclaimer=yes; Max-Age=86400; path=/; secure;"
-        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
+        $('.cookie-overlay').removeClass('d-block').addClass('d-none').css('visibility', 'visible');
         $('.su-multi-menu, .page-content, footer').removeClass('d-background').attr('aria-hidden','false');
       });
 
