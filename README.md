@@ -1,4 +1,4 @@
-# [Stanford Starter](https://github.com/SU-SWS/bondholders_subtheme)
+# [Bondholders Subtheme](https://github.com/SU-SWS/bondholders_subtheme)
 ##### Version: 8.x-1.0-dev
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
@@ -6,7 +6,7 @@ Changelog: [Changelog.txt](CHANGELOG.txt)
 Description
 ---
 
-Bondholders sub theme is a Stanford sub-theme that works with the Stanford Basic theme.
+Bondholders Subtheme is a Stanford sub-theme that works with the Stanford Basic theme.
 
 Documentation
 ---
