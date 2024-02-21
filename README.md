@@ -1,5 +1,5 @@
 # [Bondholders Subtheme](https://github.com/SU-SWS/bondholders_subtheme)
-##### Version: 8.x-1.0-dev
+##### Version: 1.0.1
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
