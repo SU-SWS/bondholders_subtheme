@@ -6,9 +6,8 @@
   @include padding(100px);
 
   position: absolute;
-  top: 110px;
   background: $su-color-white;
-  z-index: 2051;
+  z-index: 99999;
   min-height: fit-content;
   box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
 
@@ -34,7 +33,7 @@
   }
 
   button {
-    &:focus, 
+    &:focus,
     &:hover  {
       outline: 3px solid $su-color-black-20;
     }
@@ -45,7 +44,7 @@
   opacity: 0.1;
   background-color: $su-color-black-10;
 
-  a, 
+  a,
   button {
     pointer-events: none;
     cursor: default;
