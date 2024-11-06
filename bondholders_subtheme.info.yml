@@ -2,7 +2,7 @@ name: Bondholders
 type: theme
 description: 'Bondholders Sub Theme.'
 package: Stanford
-version: 1.0.1
+version: 1.0.2
 core_version_requirement: ^9 || ^10
 base theme: stanford_basic
 libraries:
