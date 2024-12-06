@@ -7,6 +7,8 @@
         '<div class="cookie-overlay p-4 d-block" role="dialog" aria-modal="true" style="visibility:hidden;" aria-labelledby="d-title" aria-describedby="description">' +
         '<div class="d-flex" id="description">' +
 
+        '<div class="su-lockup su-lockup--option-a"><div class="su-lockup__cell1"><div class="su-lockup__wordmark-wrapper"><span class="su-lockup__wordmark">Stanford</span></div></div><div class="su-lockup__cell2"><span class="su-lockup__line1">Bondholder Information</span></div></div>' +
+
         '<p id="dislaimer-intro">Please read the Disclaimer below and indicate your acceptance before entering the <strong>Office of the Treasurer</strong> website with information for bondholders and the Stanford community.</p>' +
 
         '<h2 id="d-title"><strong>Disclaimer</strong></h2>' +
