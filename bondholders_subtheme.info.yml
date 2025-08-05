@@ -3,7 +3,7 @@ type: theme
 description: 'Bondholders Sub Theme.'
 package: Stanford
 version: 1.0.3
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 base theme: stanford_basic
 libraries:
   - bondholders_subtheme/allpages
